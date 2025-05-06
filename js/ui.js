@@ -9,6 +9,11 @@ export function setupUI() {
         if (!nome || !email) {
             mensagem.innerHTML = 'Preencher todos os campos';
             mensagem.style.display = 'block';
+            setTimeout(() => {
+                mensagem.style.display = 'none';
+                mensagem.innerHTML = '';
+            }, 3000);
+
             return;
         }
 
