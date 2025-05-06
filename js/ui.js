@@ -1,21 +1,16 @@
-
 import { criarUsuarios, listarUsuarios, editarUsuarios, deletarUsuario} from './crud.js';
 
 export function setupUI() {
-    document.getElementById('mensagem');
     document.getElementById('btnCriar').addEventListener('click', () => {
         
         const nome = document.getElementById('nome').value.trim();
         const email = document.getElementById('email').value.trim();
 
         if (!nome || !email) {
-            mensagem.innerHTML = 'Preencher todos os campos!!';
-            mensagem.style.display = 'block'; 
-            
+            //esse alert será removido e colocaremos algo no css dps
+            alert('Preencher todos os campos');
+            return
         }
-
-        mensagem.innerHTML = '';
-        mensagem.style.display = 'none';
 
         criarUsuarios(nome, email);
         renderLista();
