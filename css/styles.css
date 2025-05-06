@@ -7,3 +7,14 @@
   font-family: "Poppins", sans-serif;
 }
 
+body{
+  background-color: #555;
+}
+
+.mensagem-info{
+  color: #555;
+  margin-top: 10px;
+  font-style: italic;
+}
+
+
