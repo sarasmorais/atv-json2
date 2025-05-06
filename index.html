@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD com JSON Modular</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+    <input type="text" id="nome" placeholder="Nome">
+    <input type="email" id="email" placeholder="E-mail">
+    <button id="btnCriar">Criar</button>
+    
+    <div id="mensagem" class="msg-erro" style="display:none;"></div>
+
+    <div id="mensagemLista" class="mensagem-info" style:"display:none;">
+    </div>
+
+    <ul id="listaUsuarios"></ul>
+    <button id="btn"></button>
+    <button id="edt" style="display:none;">Editar</button>
+    <button id="exc" style="display:none;">Excluir</button>
+  </div>
+  <script type="module" src="main.js"></script>
+</body>
+</html>
