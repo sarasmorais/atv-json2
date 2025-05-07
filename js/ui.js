@@ -66,8 +66,20 @@ window.editar = (id) => {
 }
 
 window.excluir = (id) => {
-    if (confirm("Tu tem certeza?")){
+    const confirmBox = document.getElementById('confirmacao');
+    const btnSim = document.getElementById('btnSim');
+    const btnNao = document.getElementById('btnNao');
+
+    confirmBox.style.display = 'block';
+
+
+    btnSim.onclick = () => {
         deletarUsuario(id);
         renderLista();
-    }
-}
+        confirmBox.style.display = 'none';
+    };
+
+    btnNao.onclick = () => {
+        confirmBox.style.display = 'none';
+    };
+};
