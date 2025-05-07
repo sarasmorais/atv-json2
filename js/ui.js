@@ -33,16 +33,28 @@ function renderLista() {
     listarUsuarios(usuarios => {
         usuarios.forEach(usuario => {
             const li = document.createElement('li');
+            li.textContent = `${usuario.nome} (${usuario.email})`;
 
-            li.innerHTML = `
-            ${usuario.nome} (${usuario.email})
-            <button onclick="editar(${usuario.id})">Editar</button>
-            <button onclick="excluir(${usuario.id})">Excluir</button>
-            `;
+            // Cria botões com IDs únicos
+            const btnEditar = document.createElement('button');
+            btnEditar.id = `editar-${usuario.id}`;
+            btnEditar.textContent = 'Editar';
+            li.appendChild(btnEditar);
+
+            const btnExcluir = document.createElement('button');
+            btnExcluir.id = `excluir-${usuario.id}`;
+            btnExcluir.textContent = 'Excluir';
+            li.appendChild(btnExcluir);
+
             lista.appendChild(li);
-        })
-    })
+
+            // Agora você pode usar getElementById
+            document.getElementById(`editar-${usuario.id}`).addEventListener('click', () => editar(usuario.id));
+            document.getElementById(`excluir-${usuario.id}`).addEventListener('click', () => excluir(usuario.id));
+        });
+    });
 }
+
 
 window.editar = (id) => {
     const novoNome = prompt("Novo Nome");
