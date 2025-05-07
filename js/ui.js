@@ -66,29 +66,8 @@ window.editar = (id) => {
 }
 
 window.excluir = (id) => {
-    const confirmBox = document.getElementById('confirmacao');
-    const btnConfirmar = document.getElementById('btnConfirmar');
-    const btnCancelar = document.getElementById('btnCancelar');
-
-    confirmBox.style.display = 'block';
-
-    // Remove ouvintes anteriores (evita múltiplos cliques acumulados)
-    const novoConfirmar = btnConfirmar.cloneNode(true);
-    const novoCancelar = btnCancelar.cloneNode(true);
-
-    btnConfirmar.parentNode.replaceChild(novoConfirmar, btnConfirmar);
-    btnCancelar.parentNode.replaceChild(novoCancelar, btnCancelar);
-
-    // Confirmar exclusão
-    novoConfirmar.addEventListener('click', () => {
+    if (confirm("Tu tem certeza?")){
         deletarUsuario(id);
         renderLista();
-        confirmBox.style.display = 'none';
-    });
-
-    // Cancelar exclusão
-    novoCancelar.addEventListener('click', () => {
-        confirmBox.style.display = 'none';
-    });
-};
-
+    }
+}
