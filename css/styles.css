@@ -74,7 +74,11 @@ button:hover {
 
 .msg-erro {
   color: var(--error-color);
+  display: flex;
+  justify-content: center;
   margin-top: 10px;
+  font-weight: bold;
+  font-size: 20px;
 }
 
 .mensagem-info {
