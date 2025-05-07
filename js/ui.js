@@ -35,7 +35,7 @@ function renderLista() {
             const li = document.createElement('li');
             li.textContent = `${usuario.nome} (${usuario.email})`;
 
-            // Cria botões com IDs únicos
+            
             const btnEditar = document.createElement('button');
             btnEditar.id = `editar-${usuario.id}`;
             btnEditar.textContent = 'Editar';
@@ -48,7 +48,6 @@ function renderLista() {
 
             lista.appendChild(li);
 
-            // Agora você pode usar getElementById
             document.getElementById(`editar-${usuario.id}`).addEventListener('click', () => editar(usuario.id));
             document.getElementById(`excluir-${usuario.id}`).addEventListener('click', () => excluir(usuario.id));
         });
