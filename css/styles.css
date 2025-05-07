@@ -1,20 +1,91 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+
+:root {
+  --bg-color: #121212;
+  --text-color: #e0e0e0;
+  --input-bg: #1e1e1e;
+  --input-border: #333;
+  --button-bg: #2a2a2a;
+  --button-hover-bg: #3c3c3c;
+  --error-color: #ff5252;
+  --info-color: #4fc3f7;
+}
+
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
 
-body{
-  background-color: #555;
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
 }
 
-.mensagem-info{
-  color: #555;
+.container {
+  background-color: #1a1a1a;
+  padding: 30px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.6);
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  background-color: var(--input-bg);
+  border: 1px solid var(--input-border);
+  border-radius: 6px;
+  color: var(--text-color);
+}
+
+input::placeholder {
+  color: #aaa;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
   margin-top: 10px;
-  font-style: italic;
+  background-color: var(--button-bg);
+  color: var(--text-color);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
+button:hover {
+  background-color: var(--button-hover-bg);
+}
 
+.msg-erro {
+  color: var(--error-color);
+  margin-top: 10px;
+}
+
+.mensagem-info {
+  color: var(--info-color);
+  margin-top: 10px;
+}
+
+ul {
+  list-style: none;
+  margin-top: 20px;
+}
+
+ul li {
+  padding: 10px;
+  background-color: #222;
+  margin-bottom: 10px;
+  border-radius: 6px;
+}
